@@ -12,7 +12,7 @@ def all_posts(request):
    }
     return render(
         request,
-        template_name="app/all_poducts.html",
+        template_name="app/post_list.html",
         context=context, 
 
     )
