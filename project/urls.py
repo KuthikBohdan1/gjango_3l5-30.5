@@ -19,7 +19,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('posts/', admin.site.urls )
+    # path('post-page/', post_views.page_post,)
 ]
 
 
