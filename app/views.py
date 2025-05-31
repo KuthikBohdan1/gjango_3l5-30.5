@@ -18,7 +18,7 @@ def all_posts(request):
     )
 
 
-def page_post(request):
+def page_post(request, post_id):
     post = Post.objects.get(id = post_id)
 
     context = {
@@ -28,6 +28,21 @@ def page_post(request):
     return render(
         request,
         template_name="app/page_post.html",
-        context=context, 
+        context=context
+
+    )
+
+
+def page_author(request, post_id):
+    post = Post.objects.get(id = post_id)
+
+    context = {
+       "author": author_post,
+
+   }
+    return render(
+        request,
+        template_name="app/page_post.html",
+        context=context
 
     )
