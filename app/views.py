@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from app.models import Post
+from app.models import Post, User, Author
 # Create your views here.
 
 
 def all_posts(request):
 
-    # posts = Post.objects.all()
-    posts = "hi from posts"  # Тимчасове значення для перевірки
+    posts = Post.objects.all()
+    # posts = "hi from posts"  # Тимчасове значення для перевірки
     context = {
         "all_posts": posts  # Виправлено форматування
     }
@@ -16,6 +16,19 @@ def all_posts(request):
         context=context,
     )
 
+
+def users(request):
+    users = User.objects.all()
+    context = {
+
+        "all_users" : users
+    }
+    return render(
+        request,
+        template_name="users_info_test.html",
+        context=context,
+
+    )
 
 # def page_post(request, post_id):
 #     post = Post.objects.get(id = post_id)

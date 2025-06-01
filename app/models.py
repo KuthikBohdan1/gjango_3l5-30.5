@@ -25,7 +25,12 @@ class Post(models.Model):
         date_before = timezone.now() - timedelta(days=7) 
 
         return self.published_date >= date_before
+    
 
 
 
+class User(models.Model):
+    user = models.TextField(null=False)
 
+    def __str__(self):
+        return self.user
