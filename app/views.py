@@ -4,45 +4,44 @@ from app.models import Post
 
 
 def all_posts(request):
-    posts = Post.object.all()
 
+    # posts = Post.objects.all()
+    posts = "hi from posts"  # Тимчасове значення для перевірки
     context = {
-       "all_posts": all_posts
-
-   }
+        "all_posts": posts  # Виправлено форматування
+    }
     return render(
         request,
-        template_name="app/post_list.html",
-        context=context, 
-
+        template_name="page_post.html",
+        context=context,
     )
 
 
-def page_post(request, post_id):
-    post = Post.objects.get(id = post_id)
+# def page_post(request, post_id):
+#     post = Post.objects.get(id = post_id)
 
-    context = {
-       "post": post
+#     context = {
+#        "post": post
 
-   }
-    return render(
-        request,
-        template_name="app/page_post.html",
-        context=context
+#    }
+#     return render(
+#         request,
+#         template_name="app/page_post.html",
+#         context=context
 
-    )
+#     )
 
 
-def page_author(request, post_id):
-    post = Post.objects.get(id = post_id)
+# def page_author(request, post_id):
+#     post = Post.objects.get(id = post_id)
 
-    context = {
-       "author": author_post,
+#     context = {
+#        "author": author_post,
 
-   }
-    return render(
-        request,
-        template_name="app/page_post.html",
-        context=context
+#    }
+#     return render(
+#         request,
+#         template_name="app/page_post.html",
+#         context=context
 
-    )
+#     )
